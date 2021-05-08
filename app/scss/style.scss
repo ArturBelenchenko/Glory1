@@ -1,0 +1,238 @@
+@import "vars";
+@import "fonts";
+@import "reset";
+@import "libs";
+@import "global";
+
+.header {
+    padding: 30px 0 40px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(90deg, rgba(254, 62, 87, 1) 0%, rgba(128, 60, 167, 1) 100%);
+    z-index: 10;
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+.menu {
+    margin: auto;
+    &__list {
+        display: flex;
+    }
+    &__list-item + .menu__list-item {
+        padding-left: 15px;
+    }
+    &__list-link {
+        @extend %montserrat-700;
+        color: $default;
+        transition: 0.3s ease-in-out;
+        &:hover {
+            color: $hover;
+            transition: 0.3s ease-in-out;
+        }
+    }
+    &__list-link--active {
+        color: $hover;
+    }
+}
+
+.navbar-icon {
+    display: none;
+    place-items: center;
+    height: 55px;
+    width: 55px;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.navbar-icon > span {
+    display: block;
+    width: 50px;
+    height: 3px;
+    background-color: $default;
+    justify-self: center;
+    transition: all 0.3s ease-in-out;
+}
+
+.navbar-icon.active span:nth-child(1) {
+    width: 55px;
+    transform-origin: center center;
+    transform: rotate(-45deg) translate(-20%, 500%);
+}
+
+.navbar-icon.active span:nth-child(2) {
+    transform: translateX(55px);
+}
+
+.navbar-icon.active span:nth-child(3) {
+    width: 55px;
+    transform-origin: center center;
+    transform: rotate(45deg) translate(-20%, -500%);
+}
+
+.about {
+    padding-top: 100px;
+    &__slogan {
+        display: block;
+        margin: auto;
+        text-align: center;
+        max-width: 340px;
+        padding-bottom: 70px;
+    }
+    &__slogan-title {
+        @extend %montserrat-700;
+        font-size: 30px;
+        line-height: 32px;
+    }
+    &__slogan-subtitle {
+        @extend %montserrat-500;
+        font-size: 18px;
+        line-height: 18px;
+    }
+    &__image {
+        margin: auto;
+        max-width: 330px;
+        min-height: 330px;
+        border-radius: 50%;
+        border: 6px solid $hover;
+    }
+    &__title {
+        left: 27%;
+    }
+}
+
+.servises {
+    padding: 30px 0 130px;
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+    }
+    &__title {
+        left: 33%;
+        margin-bottom: 55px;
+    }
+    &__item {
+        text-align: left;
+        line-height: 35px;
+    }
+    &__subtitle {
+        padding: 10px 20px 30px;
+        text-align: center;
+        @extend %montserrat-700;
+    }
+    &__box {
+        display: flex;
+    }
+    &__left {
+        padding-right: 30px;
+    }
+}
+
+.work {
+    padding-bottom: 100px;
+    &__title {
+        left: 33%;
+        margin-bottom: 38px;
+    }
+    &__inner {
+        width: 100%;
+    }
+    &__item {
+        width: 400px;
+        height: 400px;
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
+}
+.slick-dots {
+    display: flex;
+    justify-content: center;
+    transform: translateY(40px);
+}
+
+.slick-dots li + li {
+    margin-left: 15px;
+}
+
+.slick-dots button {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    font-size: 0;
+    padding: 0;
+    border: none;
+    outline: 1px solid transparent;
+    transition: background-color 0.4s;
+}
+
+.slick-dots button:hover,
+.slick-dots .slick-active button {
+    background-color: $hover;
+}
+
+.slide-arrow {
+    position: absolute;
+    top: 50%;
+    margin-top: -15px;
+    cursor: pointer;
+}
+
+.prev-arrow {
+    left: 50px;
+    width: 35px;
+    height: 35px;
+    background: url("../images/icon/arrow__left.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    outline: none;
+    z-index: 9;
+}
+
+.next-arrow {
+    right: 50px;
+    width: 35px;
+    height: 35px;
+    background: url("../images/icon/arrow__right.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    outline: none;
+}
+
+.contacts {
+    padding: 50px 0 50px;
+    &__title {
+        margin-bottom: 55px;
+        left: 33%;
+    }
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+        max-width: 620px;
+        margin: auto;
+    }
+    &__link {
+        display: flex;
+        align-items: center;
+        margin-bottom: 30px;
+        text-decoration: none;
+        color: $default;
+        @extend %montserrat-700;
+        font-size: 18px;
+        line-height: 22px;
+        transition: all 0.4s;
+        &:hover {
+            color: $hover;
+            transition: all 0.4s;
+        }
+    }
+    &__icon {
+        margin-right: 15px;
+    }
+}
+
+@import "media";

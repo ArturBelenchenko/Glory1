@@ -1,0 +1,40 @@
+body {
+    @extend %montserrat-500;
+    font-size: 14px;
+    line-height: 24px;
+    color: $default;
+    background: rgb(254, 62, 87);
+    background: linear-gradient(90deg, rgba(254, 62, 87, 1) 0%, rgba(128, 60, 167, 1) 100%);
+}
+
+section[class] {
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+main {
+    flex-grow: 1;
+  }
+
+.title {
+    @extend %montserrat-700;
+    max-width: 270px;
+    font-size: 24px;
+    line-height: 26px;
+    padding-bottom: 26px;
+    margin: auto;
+    text-align: center;
+    &:after {
+        content: "";
+        display: block;
+        border-bottom: 2px solid $hover;
+        max-width: 350px;
+        width: 100%;
+        height: 5px;
+    }
+}
